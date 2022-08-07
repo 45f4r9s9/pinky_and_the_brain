@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> 🐭 Pinky_and_the_Brain</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 400 15px/1.8 Verdana, sans-serif;
+    color: #777;
+    background-color: #21222c;
+  }
+  h3, h4 {
+    margin: 10px 0 30px 0;
+    letter-spacing: 10px;      
+    font-size: 20px;
+    color: rgb(0, 249, 52);
+  }
+  h5 {
+    display: inline;
+  }
+  .container {
+    /* padding: 80px 120px; */
+    padding: 40px 60px;
+  }
+  .person {
+    border: 10px solid transparent;
+    margin-bottom: 25px;
+    width: 80%;
+    height: 80%;
+    opacity: 0.7;
+  }
+  .person:hover {
+    border-color: #f1f1f1;
+  }
+  .carousel-inner img {
+    /* -webkit-filter: grayscale(90%); */
+    /* filter: grayscale(90%); */
+    /* make all photos black and white */
+    width: 100%;
+    /* Set width to 100% */
+    margin: auto;
+  }
+  .carousel-caption h3 {
+    color: rgb(0, 249, 52) !important;
+  }
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+  }
+  .bg-1 {
+    background: rgb(17, 17, 17);
+    color: #bdbdbd;
+  }
+  .bg-1 h3 {color: rgb(0, 249, 52);}
+  .bg-1 p {font-style: italic;}
+  .list-group-item:first-child {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+  .list-group-item:last-child {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail p {
+    margin-top: 15px;
+    color: #555;
+  }
+  .btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #f1f1f1;
+    border-radius: 0;
+    transition: .2s;
+  }
+  .btn:hover, .btn:focus {
+    border: 1px solid #333;
+    background-color: rgb(0, 249, 52);
+    color: #000;
+  }
+  .modal-header, h4, .close {
+    background-color: #333;
+    color: rgb(0, 249, 52) !important;
+    text-align: center;
+    font-size: 30px;
+  }
+  .modal-header, .modal-body {
+    padding: 40px 50px;
+  }
+  .nav-tabs li a {
+    color: rgb(0, 249, 52);
+    /* color: rgb(85, 85, 85); */
+  }
+  #googleMap {
+    width: 100%;
+    height: 400px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+  }  
+  .navbar {
+    font-family: Montserrat, sans-serif;
+    margin-bottom: 0;
+    background-color: rgb(17, 17, 17);
+    border: 0;
+    font-size: 13px !important;
+    letter-spacing: 4px;
+    opacity: 0.9;
+  }
+  .navbar li a, .navbar .navbar-brand { 
+    color: rgb(0, 249, 52) !important;
+  }
+  /* .navbar li a { 
+    color: rgb(17, 0, 249) !important;
+  }
+  .navbar { 
+    color: rgb(197, 20, 49) !important;
+  }
+  .navbar-brand { 
+    color: rgb(199, 8, 174) !important;
+  } */
+  .navbar-nav li a:hover {
+    color: rgb(0, 249, 52) !important;
+  }
+  .navbar-nav li.active a {
+    color: rgb(0, 249, 52) !important;
+    background-color: #29292c !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+  }
+  .open .dropdown-toggle {
+    color: rgb(0, 249, 52);
+    background-color: #555 !important;
+  }
+  .dropdown-menu li a {
+    color: rgb(0, 249, 52) !important;
+  }
+  .dropdown-menu li a:hover {
+    background-color: rgb(0, 249, 52) !important;
+  }
+  footer {
+    background-color: rgb(17, 17, 17);
+    color: rgb(0, 249, 52);
+    padding: 32px;
+  }
+  footer a {
+    color: rgb(0, 249, 52);
+  }
+  footer a:hover {
+    color: #777;
+    text-decoration: none;
+  }  
+  .form-control {
+    border-radius: 0;
+  }
+  textarea {
+    resize: none;
+  }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage">Pinky and the Brain</a>
+    </div>
+    
+  </div>
+</nav>
+
+
+
+<!-- PROYECTOS Section -->
+<div id="proyects" class="bg-1">
+  <div class="container">
+    <br>
+    <h3 class="text-center">Pinky and the Brain</h3>
+    <br>
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#home">Season 1</a></li>
+      <li><a data-toggle="tab" href="#menu1">Season 2</a></li>
+      <li><a data-toggle="tab" href="#menu2">Season 3</a></li>
+      <li><a data-toggle="tab" href="#menu3">Season 4</a></li>
+    </ul>
+    <br>
+    <div class="tab-content">
+      <div id="home" class="tab-pane fade in active">
+        <h5>Episode--1</h5>
+        <a href="https://drive.google.com/file/d/1N3VqhlcAsNi6CKt3dEsidhYZPH84mqS0/view?usp=sharing" target="_blank"><img src="X.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode--2</h5>
+        <a href="https://drive.google.com/file/d/13STKRs2gWAf8LYzCsigKI49bu4V6I0QI/view?usp=sharing" target="_blank"><img src="X.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode--3</h5>
+        <a href="https://drive.google.com/file/d/1q1pUkgu8AshSPkndcPDdqbwlG483aMDq/view?usp=sharing" target="_blank"><img src="A3.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode--4</h5>
+        <a href="https://drive.google.com/file/d/1FmmrI1ohN_bcuQ1A-i2wlZaPtsWtejOD/view?usp=sharing" target="_blank"><img src="A4.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode--5</h5>
+        <a href="https://drive.google.com/file/d/1x3dAKuXIIWZtohCOmJkQNoKI88Kg-l7e/view?usp=sharing" target="_blank"><img src="A5.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode--6</h5>
+        <a href="https://drive.google.com/file/d/1Fm7TmgAO8OFtxfzkpyqdSXAPrTZKHhYH/view?usp=sharing" target="_blank"><img src="A6.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode--7</h5>
+        <a href="https://drive.google.com/file/d/1dSwrKd6I65isXlIQ5cf_BvNfKUaXJEWM/view?usp=sharing" target="_blank"><img src="X.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode--8</h5>
+        <a href="https://drive.google.com/file/d/162oO4C0iTcjAIsAvVQVopy9-FbbZBLtg/view?usp=sharing" target="_blank"><img src="X.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode--9</h5>
+        <a href="https://drive.google.com/file/d/1a0EZecBK05YGucWluFRsI6YU1v43GBso/view?usp=sharing" target="_blank"><img src="X.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-10</h5>
+        <a href="https://drive.google.com/file/d/1vNR4EWfOvVeyZ1ZV16m-lCjRrP6H4Zcf/view?usp=sharing" target="_blank"><img src="A10.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-11</h5>
+        <a href="https://drive.google.com/file/d/1KKE9z3yjkZLe7FcjyumDsIWX2SwM6pD-/view?usp=sharing" target="_blank"><img src="X.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-12</h5>
+        <a href="https://drive.google.com/file/d/1Kc7ZB1dtQKlak-aPgOeWwA8FCQX-wc3k/view?usp=sharing" target="_blank"><img src="X.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-13</h5>
+        <a href="https://drive.google.com/file/d/12YP1LtS6Tydw9VWpPWS-OC8Epl9ppBje/view?usp=sharing" target="_blank"><img src="X.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-14</h5>
+        <a href="https://drive.google.com/file/d/1O2Sx92pjBhhR80XfrndkNRsSDeYPBw0M/view?usp=sharing" target="_blank"><img src="A14.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-15</h5>
+        <a href="https://drive.google.com/file/d/1GamYkEEITlAFKfi9uY5aObvIBoPWMltY/view?usp=sharing" target="_blank"><img src="A15.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-16</h5>
+        <a href="https://drive.google.com/file/d/1M6IxpFLo7ZI15-KCUYN4PjipzEQdTjeq/view?usp=sharing" target="_blank"><img src="A16.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-17</h5>
+        <a href="https://drive.google.com/file/d/1exzkAfnZzL2IUFpTa91yvvDTAXNYqC_G/view?usp=sharing" target="_blank"><img src="A17.png" alt="Programas TI" width="256" height="160"></a>
+      </div>
+      <div id="menu1" class="tab-pane fade">
+        <h5>Episode--1</h5>
+        <a href="https://drive.google.com/file/d/1tBNb---qRlJvioi3fK2wd9fjAatzY8aU/view?usp=sharing" target="_blank"><img src="X.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode--2</h5>
+        <a href="https://drive.google.com/file/d/1HjyTH6TId6gqyO-H-njekNUjLrg0-PSf/view?usp=sharing" target="_blank"><img src="B2.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode--3</h5>
+        <a href="https://drive.google.com/file/d/1zrLtUmSy5iNt0inPvCdNpkJVoXd1_9N9/view?usp=sharing" target="_blank"><img src="B3.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode--4</h5>
+        <a href="https://drive.google.com/file/d/1gh_J5dIyp8hht1t3KdzN7jIlaSlWXI7R/view?usp=sharing" target="_blank"><img src="X.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode--5</h5>
+        <a href="https://drive.google.com/file/d/1F8tioeUqq7g_6bpGGfbWWLM0-gD0dESD/view?usp=sharing" target="_blank"><img src="X.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode--6</h5>
+        <a href="https://drive.google.com/file/d/1vRbGCyg3KD3eD8TyOIMfGUA_55Xyd7Rt/view?usp=sharing" target="_blank"><img src="X.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode--7</h5>
+        <a href="https://drive.google.com/file/d/13hvFswy-EKGXTJnpz4c3vJ-XFK9WqXNb/view?usp=sharing" target="_blank"><img src="X.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode--8</h5>
+        <a href="https://drive.google.com/file/d/1jxtVN8h_KtqZtzU7AmKtXYkeLp4KriDL/view?usp=sharing" target="_blank"><img src="B8.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode--9</h5>
+        <a href="https://drive.google.com/file/d/1vk9q29JbVd48SKwmiHTZBDzY8A0mdVeC/view?usp=sharing" target="_blank"><img src="B9.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-10</h5>
+        <a href="https://drive.google.com/file/d/1X6GwJrsSSYHMDOFOHDbmtTf5SL2dkfkY/view?usp=sharing" target="_blank"><img src="B10.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-11</h5>
+        <a href="https://drive.google.com/file/d/1ExSdzElUIiQStx-4f9K5uZhpl3aKqtId/view?usp=sharing" target="_blank"><img src="B11.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-12</h5>
+        <a href="https://drive.google.com/file/d/16dE-Z9AxHW0tfMbMp9L_s4PtDsg-BaOI/view?usp=sharing" target="_blank"><img src="B12.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-13</h5>
+        <a href="https://drive.google.com/file/d/1wzwc_8zVHOPDSpF1lz5cdaVPXTWlQh78/view?usp=sharing" target="_blank"><img src="B13.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-14</h5>
+        <a href="https://drive.google.com/file/d/1ckf2vbO99Xzi-DlOJCGknvJ8M4kUuGjS/view?usp=sharing" target="_blank"><img src="X.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-15</h5>
+        <a href="https://drive.google.com/file/d/1FT3h-jiAjuICkWn_g0VwUJ3sbXExzd0c/view?usp=sharing" target="_blank"><img src="X.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-16</h5>
+        <a href="https://drive.google.com/file/d/1Uz2QDpAbuz1VgXjIhSW06gh0xvrl08t8/view?usp=sharing" target="_blank"><img src="B16.png" alt="Programas TI" width="256" height="160"></a>
+      </div>
+      <div id="menu2" class="tab-pane fade">
+        <h5>Episode--1</h5>
+        <a href="https://drive.google.com/file/d/1AKbpRAW7MQ96hbtOXCN96xqUdJLDBO8J/view?usp=sharing" target="_blank"><img src="C1.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode--2</h5>
+        <a href="https://drive.google.com/file/d/1YKqUutUud_feFIDfEnYhR6RQLYLd10Lz/view?usp=sharing" target="_blank"><img src="C2.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode--3</h5>
+        <a href="https://drive.google.com/file/d/18MMr-iY87xp4oXN7vp7pFfAk99ydsIQ9/view?usp=sharing" target="_blank"><img src="C3.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode--4</h5>
+        <a href="https://drive.google.com/file/d/1UHRbxUUIk2xKDQ5LCtB2fyD04FOL4vnt/view?usp=sharing" target="_blank"><img src="C4.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode--5</h5>
+        <a href="https://drive.google.com/file/d/1bhc19aWAeDdExrHz-dj0JvKyNA187-sZ/view?usp=sharing" target="_blank"><img src="C5.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode--6</h5>
+        <a href="https://drive.google.com/file/d/1dOxO-IGLSnkKAG5H38FjHOq2fIN_YN5r/view?usp=sharing" target="_blank"><img src="C6.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode--7</h5>
+        <a href="https://drive.google.com/file/d/1SR5Ye9o56qcfCBkWGukJu5R-VISFe5BD/view?usp=sharing" target="_blank"><img src="C7.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode--8</h5>
+        <a href="https://drive.google.com/file/d/1sZND8pfgho_KDwTt2qdLtNjqPWEDBc_r/view?usp=sharing" target="_blank"><img src="C8.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode--9</h5>
+        <a href="https://drive.google.com/file/d/1P3MPbQNpx5Q-qCF4znpMKvAYNfAMO7ZN/view?usp=sharing" target="_blank"><img src="C9.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-10</h5>
+        <a href="https://drive.google.com/file/d/1Smc-W4oJbA0y5E0l_I6HxLB3Mv4PAS8P/view?usp=sharing" target="_blank"><img src="C10.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-11</h5>
+        <a href="https://drive.google.com/file/d/1ZG_G-yg_NPIZ0AVhFAM9v9lwtg_S0-1v/view?usp=sharing" target="_blank"><img src="C11.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-12</h5>
+        <a href="https://drive.google.com/file/d/1dpFek21NFwi1pgCaHPdyqSw2VY2hIat_/view?usp=sharing" target="_blank"><img src="C12.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-13</h5>
+        <a href="https://drive.google.com/file/d/1NWmGjvpDQRnBNDAAlMehnSqIRAWlxtBM/view?usp=sharing" target="_blank"><img src="C13.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-14</h5>
+        <a href="https://drive.google.com/file/d/1_1T8cPgae4zErFX5b5m0_8RJ1jzYIoPj/view?usp=sharing" target="_blank"><img src="C14.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-15</h5>
+        <a href="https://drive.google.com/file/d/1X0WblFDsAMm8bLPaudPF3kXyl6pRMIb8/view?usp=sharing" target="_blank"><img src="C15.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-16</h5>
+        <a href="https://drive.google.com/file/d/1bKj61fC4MubyFS-IDHba_exi-iX_nhre/view?usp=sharing" target="_blank"><img src="C16.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-17</h5>
+        <a href="https://drive.google.com/file/d/1OI0nFnw7PJqKfnTMjQVFL6MqimwQdv77/view?usp=sharing" target="_blank"><img src="C17.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-18</h5>
+        <a href="https://drive.google.com/file/d/1abzGHME_4MVe5U2Dg3f68h2esLALjw79/view?usp=sharing" target="_blank"><img src="C18.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-19</h5>
+        <a href="https://drive.google.com/file/d/1jXyP1DSTHCn-yRRgCb4oyRFHEidqeOon/view?usp=sharing" target="_blank"><img src="C19.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-20</h5>
+        <a href="https://drive.google.com/file/d/1yun_6naVJM7Zxpt68as_u0q3ZtLh-VGJ/view?usp=sharing" target="_blank"><img src="C20.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-21</h5>
+        <a href="https://drive.google.com/file/d/1qsS6hPWY6eJ422D-zKIFXoppLTrO8_uD/view?usp=sharing" target="_blank"><img src="C21.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-22</h5>
+        <a href="https://drive.google.com/file/d/1VKB7xizKi0QB2cCwBJgMq7AZ5tOYOnZI/view?usp=sharing" target="_blank"><img src="C22.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-23</h5>
+        <a href="https://drive.google.com/file/d/1LbM_pLam7lmeqAWQcnzrjlVGXLR2VVEJ/view?usp=sharing" target="_blank"><img src="C23.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-24</h5>
+        <a href="https://drive.google.com/file/d/1-aBrS9t0zlvT8GREAvKdTKFMVxEtfN8S/view?usp=sharing" target="_blank"><img src="C24.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-25</h5>
+        <a href="https://drive.google.com/file/d/1LxyT79vM59PyLvjbRneNZ_w9yePeMEjm/view?usp=sharing" target="_blank"><img src="C25.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-26</h5>
+        <a href="https://drive.google.com/file/d/1V1JmLSPX2PBlSi12dkS9OTlbM1FRNaJ0/view?usp=sharing" target="_blank"><img src="C26.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-27</h5>
+        <a href="https://drive.google.com/file/d/1_tzet9Pp3rLR7kACtGIqtJO0wyGQY2bf/view?usp=sharing" target="_blank"><img src="C27.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-28</h5>
+        <a href="https://drive.google.com/file/d/1CeF24LZjB9GyLyIszxOPW2_7G04-D54A/view?usp=sharing" target="_blank"><img src="C28.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-29</h5>
+        <a href="https://drive.google.com/file/d/183XJja9enF7klQdfZw3gNoTGESPrBaRu/view?usp=sharing" target="_blank"><img src="C29.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-30</h5>
+        <a href="https://drive.google.com/file/d/1Nj3KUOF97-4liYfZlZ_7eUVt0-H19qpR/view?usp=sharing" target="_blank"><img src="C30.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-31</h5>
+        <a href="https://drive.google.com/file/d/1WL8qMtO006VdcQZ4Kc5febSEg789OTW5/view?usp=sharing" target="_blank"><img src="C31.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-32</h5>
+        <a href="https://drive.google.com/file/d/19UP8ygeoECXpTCw9qqkhsDZMhggM-xZt/view?usp=sharing" target="_blank"><img src="C32.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-33</h5>
+        <a href="https://drive.google.com/file/d/17AZLsnXdi8nQrJAQAzVLfkjkwnMkzD4A/view?usp=sharing" target="_blank"><img src="C33.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-34</h5>
+        <a href="https://drive.google.com/file/d/1dytgDUZDqYYLzuhOpPJbcVe0UKCQ2mmS/view?usp=sharing" target="_blank"><img src="C34.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-35</h5>
+        <a href="https://drive.google.com/file/d/19Fln3J5Ywbv-Tlh0erHi5-lw2LLfki9k/view?usp=sharing" target="_blank"><img src="C35.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-36</h5>
+        <a href="https://drive.google.com/file/d/1QqHgcWMQSYvE9uB3fpvLDwC5Rhmkrwgs/view?usp=sharing" target="_blank"><img src="C36.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-37</h5>
+        <a href="https://drive.google.com/file/d/1ItrdK8mcOEqebpqFrdbDRRcwVE7YhzSC/view?usp=sharing" target="_blank"><img src="C37.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-38</h5>
+        <a href="https://drive.google.com/file/d/1Htz3HT_TduDO-qxQGzu6nsSxzZyNY7Wq/view?usp=sharing" target="_blank"><img src="C38.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-39</h5>
+        <a href="https://drive.google.com/file/d/19EJJs4wtFUXdY5ooAQYRYvATOlApYg6j/view?usp=sharing" target="_blank"><img src="C39.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-40</h5>
+        <a href="https://drive.google.com/file/d/186u4mR3f-2b-MQWQGnm7_6CWmFEQXaHo/view?usp=sharing" target="_blank"><img src="C40.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-41</h5>
+        <a href="https://drive.google.com/file/d/1dTkmb60A-a6AAGJjBBJ7dwbEyOKYuuId/view?usp=sharing" target="_blank"><img src="C41.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-42</h5>
+        <a href="https://drive.google.com/file/d/1oJA321AKIExONUwCEYYhHQOzmqldCvo2/view?usp=sharing" target="_blank"><img src="C42.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-43</h5>
+        <a href="https://drive.google.com/file/d/1b4J4NF-yb3AODMTNRV1QcOFyqgGXzykP/view?usp=sharing" target="_blank"><img src="C43.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-44</h5>
+        <a href="https://drive.google.com/file/d/1aYoGVc0YxCNJa2zqkD4YqXOg6Z-nQDQa/view?usp=sharing" target="_blank"><img src="C44.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-45</h5>
+        <a href="https://drive.google.com/file/d/19a6rTcBIz4ZWUdE3bLELFIKY7bJlwYgB/view?usp=sharing" target="_blank"><img src="C45.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-46</h5>
+        <a href="https://drive.google.com/file/d/1J6XC8C3Zrxq4-Mg04x0cxDRNxZFQfpT7/view?usp=sharing" target="_blank"><img src="C46.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-47</h5>
+        <a href="https://drive.google.com/file/d/1VPdo0dyQP1fFIDHz5iXUvTsgRRAgeU4y/view?usp=sharing" target="_blank"><img src="C47.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-48</h5>
+        <a href="https://drive.google.com/file/d/1k5aCyIXvlUdz8T8uxxEptgMauljCWXqn/view?usp=sharing" target="_blank"><img src="C48.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-49</h5>
+        <a href="https://drive.google.com/file/d/1ckRDlgdG6DTDhtRLAecnp2AaE-FsF49t/view?usp=sharing" target="_blank"><img src="C49.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-50</h5>
+        <a href="https://drive.google.com/file/d/1YuvftjzNaCTcEukgj3oVdxNFSlM2qiy2/view?usp=sharing" target="_blank"><img src="C50.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode-51</h5>
+        <a href="https://drive.google.com/file/d/18IsFv3qPFJLtuEa663pi2JqAbVHS6oCH/view?usp=sharing" target="_blank"><img src="C51.png" alt="Programas TI" width="256" height="160"></a>
+      </div>
+      <div id="menu3" class="tab-pane fade">
+        <h5>Episode 1</h5>
+        <a href="https://drive.google.com/file/d/1AFupNTNCc7Cq6y05dm2vxuDWdJa9Tvz-/view?usp=sharing" target="_blank"><img src="D1.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode 2</h5>
+        <a href="https://drive.google.com/file/d/1v68lvZC8YCcWewsJ8Dd_S9nzFHWn1lUS/view?usp=sharing" target="_blank"><img src="D2.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode 3</h5>
+        <a href="https://drive.google.com/file/d/1BcpbCOfo1Ysnwq_LqnopS4uYCOGOd9Rm/view?usp=sharing" target="_blank"><img src="D3.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode 4</h5>
+        <a href="https://drive.google.com/file/d/1QHzE0gJYyhFfIBai_EDIsevBqsmfXnzE/view?usp=sharing" target="_blank"><img src="D4.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode 5</h5>
+        <a href="https://drive.google.com/file/d/14cUe8dCj1_DC5ORlHz1FAbuX407A3upd/view?usp=sharing" target="_blank"><img src="D5.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode 6</h5>
+        <a href="https://drive.google.com/file/d/1MUtOtjid8N2tm2LslLu4gxPXSZUiVYAq/view?usp=sharing" target="_blank"><img src="D6.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode 7</h5>
+        <a href="https://drive.google.com/file/d/12LnvV1vaB5cQtE2HfMVGX-Kdujq58yhG/view?usp=sharing" target="_blank"><img src="D7.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode 8</h5>
+        <a href="https://drive.google.com/file/d/1-5XClusbdJCZRwfGd90AThP27c0RmmoP/view?usp=sharing" target="_blank"><img src="D8.png" alt="Programas TI" width="256" height="160"></a>
+        <h5>Episode 9</h5>
+        <a href="https://drive.google.com/file/d/1uIGFHW_rLyeQZAyEkEUH34ZcdvFlxQMM/view?usp=sharing" target="_blank"><img src="D9.png" alt="Programas TI" width="256" height="160"></a>
+      </div>
+    </div>
+  </div>
+  <br>
+</div>
+
+<!-- FOOTER Section -->
+<footer class="text-center">
+  <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="Volver Arriba">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a><br><br>
+  <p>Made By Alpha ©</p> 
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Initialize Tooltip
+  $('[data-toggle="tooltip"]').tooltip(); 
+  
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+})
+</script>
+
+</body>
+</html>
